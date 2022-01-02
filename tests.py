@@ -2,10 +2,6 @@ import pytest
 import inspect
 
 
-
-
-#  TODO
-
 def test_Pixel_class():
     try:
         import pixel
