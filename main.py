@@ -18,7 +18,14 @@ def open_index_file(file_path:str) -> list[int]:
 
 
 def my_sort(nums:list[int]) -> list[int]:
-    return nums
+    return sorted(nums)
+
+
+def get_colors_from_indexes(
+        colors:list[tuple[int,int,int]], 
+        indexes:list[int]
+        ) -> list[tuple[int,int,int]]:
+    return colors
 
 
 def create_image(
@@ -28,7 +35,10 @@ def create_image(
         size: tuple[int, int],
         mode: str
     ) -> None:
-    pass
+    image = Image.new(mode, size)
+    colors = get_colors_from_indexes(colors, indexes)
+    image.putdata(colors)
+    image.save(file_path)
 
 
 def main() -> None:
